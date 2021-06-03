@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            /*첫번째방법*/
+            // function solution(arr){
+            //     let answer, min=arr[0];
+            //     for(let i=1; i<arr.length; i++){
+            //         if (arr[i]<min) min=arr[i];
+            //     }
+            //     answer=min;
+            //     return answer;
+
+            // }
+
+            // let arr=[5, 7, 1, 3, 2, 9, 11];
+            // console.log(solution(arr));
+
+
+            /*두번째방법*/
+            // function solution(arr){
+            //     let answer=Math.min(...arr);
+            //     console.log(Math.max(...arr)); // 최댓값구하는법
+            //     return answer;
+
+            // }
+
+            // let arr=[5, 7, 1, 3, 2, 9, 11];
+            // console.log(solution(arr));
+
+
+            /*세번째방법*/
+            function solution(arr){
+                let answer=Math.min.apply(null, arr);
+                return answer;
+
+            }
+
+            let arr=[5, 7, 1, 3, 2, 9, 11];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
+
+<!-- 
+    Math.min(인자);
+    숫자 여러개중에 가장 최소값을 찾아준다.
+    그런데 괄호 안에 배열(arr)를 넣어주면 값이 안나옴 only 인자만 받음
+    배열을 넣어주려면?
+    전개연산자를 사용해 '...arr' 라고 입력한다.
+    ... 는 arr[0], arr[1]... 이런식으로 인자를 펼쳐준다.
+
+    let answer=Math.min.apply(null, arr);
+    apply(null, arr); -> null값은 this를 뜻함 객체로 정해져있음
+    예시)
+    ~
+    const arr1 = [1, 2, 3];
+    const arr2 = [4, 5];
+    arr1.push(arr2);
+
+    console.log(arr1); // [1, 2, 3, [4, 5]]
+    ~
+
+    2차배열이므로
+    ~
+    const arr1 = [1, 2, 3];
+    const arr2 = [4, 5];
+    Array.prototype.push.apply(arr1, arr2);
+
+    console.log(arr1); // [1, 2, 3, 4, 5]
+    ~
+    이렇게 표현됨
+ -->

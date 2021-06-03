@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b, c){
+                let answer="YES", max;
+                let sum=a+b+c;
+                if(a>b) max=a;
+                else max=b;
+                if(c>max) max=c;
+                if((sum-max)<=max) answer="NO";
+
+                return answer;
+            }
+
+            console.log(solution(13, 33, 17));
+        </script>
+    </body>
+</html>
+
+
+<!--
+    삼각형이 되기 위해서는 밑에 긴 막대보다 상단 마주보는 막대들의 합이 더 길어야한다
+
+    가장 큰 막대 = 무조건 바닥막대
+    짧은막대 두개 합이 큰 막대보다 커야함
+-->
