@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                // let answer="";
+                // for(let x of s) {
+                //     if(x === 'A') answer+='#';
+                //     else answer+=x;
+                // }
+                let answer=s;
+                answer=answer.replace(/A/g, '#');
+                return answer;
+            }
+            
+            let str="BANANA";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
+
+
+<!-- 
+    answer=answer.replace(/A/g, '#');
+    replace()
+    어떤 패턴에 일치하는 일부 또는 모든 부분이 교체된 새로운 문자열 반환
+
+    g = global 전역을 뜻함
+ -->

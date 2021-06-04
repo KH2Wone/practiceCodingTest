@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s, t){
+                // let answer=0;
+                // for (let x of s) {
+                //     if(x===t) answer++;
+                // }
+                //return answer;
+                let answer=s.split(t).length;
+                return answer-1;
+                //R을 기준으로 split한거니까 r로 짜른 덩어리들의 개수가 나옴. 우린 R의 개수를 구해야하니까 -1. ※ 혹여나 마지막 문자가 R이더라도 R을 기준으로 잘랐기에 공백의 ""로 덩어리가 나오기때문에 문제 없다.
+            }
+            
+            let str="COMPUTERPROGRAMMING";
+            console.log(solution(str, 'R'));
+        </script>
+    </body>
+</html>
