@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer;
+                answer=s.filter((v, i)=>{
+                    if(s.indexOf(v)===i) return v;
+                });
+
+                return answer;
+            }
+            let str=["good", "time", "good", "time", "student"];
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
+
+
+<!--
+    filter();
+    주어진 함수의 테스트(필터)를 통과하는 모든 요소를 모아서 배열로 반환
+
+    예시)
+    const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+    const result = words.filter(word => word.length > 6);
+
+    console.log(result);
+    // expected output: Array ["exuberant", "destruction", "present"]
+-->

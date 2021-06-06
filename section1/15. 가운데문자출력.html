@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer;
+                let mid = Math.floor(s.length/2);
+                // substring 방법
+                // if(s.length%2==1) answer = s.substring(mid, mid+1); // 홀수길이
+                // else answer=s.substring(mid-1, mid+1);
+                // return answer;
+
+                // substr 방법
+                if(s.length%2==1) answer = s.substr(mid, 1); // 홀수길이
+                else answer=s.substr(mid-1, 2);
+                return answer;
+            }
+            console.log(solution("study"));
+        </script>
+    </body>
+</html>
+
+<!-- 
+    * 가운데 문자를 구할땐 let mid = Math.floor(s.length/2);를 쓰자.
+    0 1 2 3 4
+    s t u d y == 개수가 5다
+    5를 2로 나눈 값을 Math.floor 해주면 몫만 남기 때문에 (2 값)
+    인덱스 2번이 가운데 값으로 출력된다.
+
+    * substring(2,3);
+    글자를 잘라내 출력해준다.
+    s t u d y 에서 2번 인덱스부터 3번 인덱스까지이므로 3번 인덱스 전의 2번 인덱스만 출력해준다.
+    2, 4이면 2,3 인덱스 출력해줌
+
+    *substr(2, 4);
+    2번 인덱스부터 4개를 뽑아내라
+-->
