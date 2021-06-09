@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer="";
+                let cnt=1;
+                s=s+" "; // 마지막 문자와 비교할 인덱스가 필요한데 마지막 문자는 비교할 인덱스가 없으니까 빈공간을 주어 else를 출력해내기 위함
+                for(let i=0;i<s.length-1; i++) { // length-1은 위에 공백 포함되니까 뺀것
+                    if(s[i]===s[i+1]) cnt++;
+                    else {
+                        answer+=s[i];
+                        if(cnt>1) answer+=String(cnt);
+                        cnt=1;
+                    }
+                }
+                return answer;
+            }
+            
+            let str="KKHSSSSSSSE";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
