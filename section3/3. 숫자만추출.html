@@ -1,0 +1,90 @@
+<!-- 내가 푼 방법 -->
+<!-- <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
+                let answer="";
+
+                let num=str.replace(/[^0-9]/g, '');
+                for(let i=0; i<num.length; i++) {
+                    answer=num;
+                }
+
+                return parseInt(answer);
+            }
+            
+            let str="g0en2T0s8eSoft";
+            console.log(solution(str));
+        </script>
+    </body>
+</html> -->
+
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
+                let answer="";
+
+                for(let x of str) {
+                    if(!isNaN(x)) answer+=x;
+                }
+
+                return parseInt(answer);
+            }
+            
+            let str="g0en2T0s8eSoft";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
+
+<!-- 
+    * isNaN();
+    어떤 값이 NaN(숫자가아님)인지 판별 즉, 숫자를 제외한 문자인지 판별해냄
+
+    * parseInt();
+    문자열을 정수로 바꿈
+    parseInt(string, radix);
+    string
+    - 숫자로 변환할 문자열
+    radix
+    - optional
+    - string 문자열을 읽을 진법(수의 진법 체계의 진법)
+    - 2~36의 수
+-->
+
+
+<!-- parseInt() 쓰지 않고 출력해내는 방법 -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
+                let answer=0; //0으로 값을 바꾸고
+
+                for(let x of str) {
+                    if(!isNaN(x)) answer=answer*10+Number(x);
+                    // 10을 곱해주는 이유는 숫자로 출력해내려면 10을 곱해주어야 최종값에 도달할 수 있음
+                    // ex) 0*10+0 = 0 && 0*10+2=2 && 2*10+8=208 이런식으로...
+                }
+
+                return answer;
+            }
+            
+            let str="g0en2T0s8eSoft";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

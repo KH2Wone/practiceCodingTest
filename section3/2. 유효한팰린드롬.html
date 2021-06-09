@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer="YES";
+                s=s.toLowerCase().replace(/[^a-z]/g, '');
+                if(s.split('').reverse().join('')!==s) return 'NO';
+                return answer;
+            }
+            
+            let str="found7, time: study; Yduts; emitt, 7Dnuof";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
+
+
+<!-- 
+    replace(/[^a-z]/g, '');
+    /[^a-z]/ a부터 z가 아닌것들 - 정규식표현
+    replace(); 어떤 패턴에 일치하는 일부 또는 모든 부분이 교체된 새로운 문자열을 반환
+ -->
