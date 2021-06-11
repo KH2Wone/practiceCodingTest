@@ -1,0 +1,78 @@
+<!-- <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(n, arr){
+                let answer, max=Number.MIN_SAFE_INTEGER;
+                for(let x of arr) {
+                    let sum=0, tmp=x;
+                    while(tmp) { // 각 자릿수들을 더하기 위해 임시로(%,/) 숫자를 자름
+                        sum+=(tmp%10);
+                        tmp=Math.floor(tmp/10);
+                    }
+                    if(sum>max) {
+                        max=sum;
+                        answer=x;
+                    }
+                    else if(sum===max) { // 자릿수 더한 값은 같고
+                        if(x>answer) answer=x; // 실제 숫자 값은 차이가 날때
+                    }
+                }
+                return answer;
+            }
+            
+            let arr=[128, 460, 603, 40, 521, 137, 123];
+            console.log(solution(7, arr));
+        </script>
+    </body>
+</html> -->
+
+
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(n, arr){
+                let answer, max=Number.MIN_SAFE_INTEGER;
+                for(let x of arr){
+                    let sum=x.toString().split('').reduce((a, b)=>a+Number(b), 0);
+                    if(sum>max){
+                        max=sum;
+                        answer=x;
+                    }
+                    else if(sum===max){
+                        if(x>answer) answer=x;
+                    }
+                }
+                return answer;
+            }
+            
+            let arr=[128, 460, 603, 40, 521, 137, 123];
+            console.log(solution(7, arr));
+        </script>
+    </body>
+</html>
+
+<!-- 
+    * reduce((a, b)=>a+Number(b), 0);
+    arr.reduce(callback[, initialValue])
+    b에 계속 해당 값이 나타나서 연산작업을 하게 되고 그 값이 a에 누적되어 계속 계산됨 (끝날때까지) = 그냥 쉽게 말해서 더한다고(+) 생각하면 됨.. == 1+2+8 = 11...
+    Number를 해주어야 값이 계산됨
+    0은 초기화값
+    예시)
+    const array1 = [1, 2, 3, 4];
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+    // 1 + 2 + 3 + 4
+    console.log(array1.reduce(reducer));
+    // expected output: 10
+
+    * split은 string만 가능하다
+ -->
