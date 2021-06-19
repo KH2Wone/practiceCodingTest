@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer;
+                let stack=[];
+                for(let x of s) {
+                    if(x===')') {
+                        while(stack.pop()!=='(');
+                        // pop한 자료가 알파벳일때 참(pop해라)
+                        // (가 나오면 그때 false로 while문이 멈춘다
+                    }
+                    else stack.push(x); // 닫는 괄호가 아닌 것들 계속 push
+                }
+                answer=stack.join('');
+                return answer;
+            }
+
+            let str="(A(BC)D)EF(G(H)(IJ)K)LM(N)";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
