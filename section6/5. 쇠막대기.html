@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer=0;
+                let stack=[];
+                for(let i=0; i<s.length; i++) {
+                    if(s[i]==='(') stack.push(s[i]);
+                    else { // 닫는괄호만났을때
+                        // 어차피 닫는괄호 만나면 하나는 pop 해주어야함
+                        stack.pop();
+                        // 레이저
+                        if(s[i-1]==='(') answer+=(stack.length);
+                        // 막대
+                        else answer+=1;
+                    }
+                }
+                return answer;
+            }
+            
+            let a="()(((()())(())()))(())";
+            console.log(solution(a));
+        </script>
+    </body>
+</html>
+
+
+<!-- 내가 푼 문제 -->
+<!-- <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer=0;
+                let stack=[];
+                for(let i=0; i<s.length; i++) {
+                    if(s[i]==='(') stack.push(s[i]);
+                    else { // 닫는괄호만났을때
+                        if(s[i-1]==='(') {
+                            // 레이저
+                            stack.pop(s[i-1]);
+                            answer+=stack.length;
+                        }
+                        else {
+                            // 막대
+                            answer++;
+                            stack.pop(s[i]);
+                        }
+                    }
+                }
+                return answer;
+            }
+            
+            let a="()(((()())(())()))(())";
+            console.log(solution(a));
+        </script>
+    </body>
+</html> -->
