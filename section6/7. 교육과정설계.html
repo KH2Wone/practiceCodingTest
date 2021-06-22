@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(need, plan){
+                let answer="YES";
+                let queue=need.split('');
+                for(let x of plan) {
+                    // 일단 필수 이수과목인지 걸러내기
+                    if(queue.includes(x)) {
+                        // 첫번째에 있느냐(순서가 맞는지 걸러내기)
+                        if(x!==queue.shift()) return "NO";
+                    }
+                }
+                // 아예 해당 필수과목 없을시
+                if(queue.length>0) return "NO";
+                
+                return answer;
+            }
+
+            let a="CBA";
+            let b="CBDAGE";
+            console.log(solution(a, b));
+        </script>
+    </body>
+</html>
