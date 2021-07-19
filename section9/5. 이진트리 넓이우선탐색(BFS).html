@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(){  
+                let answer="";
+                let queue=[];
+                queue.push(1); // note node
+                while(queue.length) {
+                    let v = queue.shift();
+                    answer+=v+" ";
+                    for(let nv of [v*2, v*2+1]) {
+                        if(nv>7) continue;
+                        // continue === nv값이 if문에서 참이면 하단 코드 안하고 다음 for문으로 넘어감
+                        queue.push(nv);
+                    }
+                }
+                return answer;
+            }
+
+            console.log(solution());
+        </script>
+    </body>
+</html>
+
+
+<!-- 
+    최단거리를 찾기 => 넓이우선탐색
+ -->
