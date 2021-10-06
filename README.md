@@ -10,4 +10,4 @@
 7. [정렬과 그리디,결정알고리즘(이분검색)](https://github.com/KH2Wone/practiceCodingTest/tree/main/section7)   
 8. [재귀함수와 완전탐색(DFS:깊이우선탐색)](https://github.com/KH2Wone/practiceCodingTest/tree/main/section8)   
 9. [그래프와 탐색(DFS, BFS:넓이우선탐색)](https://github.com/KH2Wone/practiceCodingTest/tree/main/section9)   
-10. [Dynamic programming(동적계획법)](https://github.com/KH2Wone/practiceCodingTest/tree/main/section10)
+10. [Dynamic programming(동적계획법)](https://github.com/KH2Wone/practiceCodingTest/tree/main/section10)# codingTestPractice
